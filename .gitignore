@@ -11,3 +11,13 @@
 
 #!.yarn/cache
 .pnp.*
+
+
+# node_modules
+node_modules
+
+# yarn
+.yarn
+
+# vscode
+.vscode

@@ -1,17 +1,23 @@
-// Insertion sort
-function sort(arr: number[]) {
-    arr.forEach((current, i, arr) => {
-        let pos = i - 1
+// Bitwise sort
+function sort(array: number[]) {
+    for (let j = 1; j < 3; j++) {
+        let buffer = Array.from({ length: 10 }, () => [] as number[])
 
-        while (pos >= 0 && arr[pos] > current) {
-            arr[pos + 1] = arr[pos]
-            pos--
+        for (let i = 0; i < array.length; i++) {
+            const n = array[i]
+            const m = Math.pow(10, j - 1)
+            const digit = Math.floor(n / m) % 10
+            buffer[digit].push(n)
         }
 
-        arr[pos + 1] = current
-    })
+        array = buffer.reduce((acc, pocket) => {
+            acc.push(...pocket)
+            return acc
+        }, [])
+        console.log(array)
+    }
 
-    return arr
+    return array
 }
 
 const readline = require('node:readline')

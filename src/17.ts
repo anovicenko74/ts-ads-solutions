@@ -198,27 +198,6 @@ class BinarySearchTree {
     }
 }
 
-// Пример использования
-const bst = new BinarySearchTree()
-bst.add(50)
-bst.add(30)
-bst.add(70)
-bst.add(20)
-bst.add(40)
-bst.add(60)
-bst.add(80)
-
-console.log('Pre-order traversal:', bst.preOrderTraversal(bst.root)) // [50, 30, 20, 40, 70, 60, 80]
-console.log('In-order traversal:', bst.inOrderTraversal(bst.root)) // [20, 30, 40, 50, 60, 70, 80]
-console.log('Post-order traversal:', bst.postOrderTraversal(bst.root)) // [20, 40, 30, 60, 80, 70, 50]
-
-console.log('Find 40:', bst.find(40)) // TreeNode { value: 40, left: null, right: null }
-bst.remove(40)
-console.log(
-    'In-order traversal after removing 40:',
-    bst.inOrderTraversal(bst.root)
-) // [20, 30, 50, 60, 70, 80]
-
 enum Actions {
     add = 'Добавить',
     remove = 'Удалить',
@@ -237,8 +216,6 @@ const main = async () => {
             message: 'Выберите действие',
             choices: ['Добавить', 'Удалить', 'Закончить'],
         })
-
-        console.log(action)
 
         switch (action) {
             case Actions.add:
